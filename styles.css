@@ -1,0 +1,711 @@
+/* ================================================
+   PORTAFOLIO DIGITAL — ESTILOS CYBERPUNK
+   Archivo: styles.css
+   Descripción: Hoja de estilos completa para el
+   portafolio de Creación de Contenidos Digitales.
+   ================================================ */
+
+
+/* ──────────────────────────────────────────────
+   1. VARIABLES CSS (PALETA CYBERPUNK)
+   Modifica estos valores para cambiar colores
+   en todo el sitio de una sola vez.
+   ────────────────────────────────────────────── */
+:root {
+  /* Fondos */
+  --bg-dark:       #050216;   /* fondo principal oscuro */
+  --bg-mid:        #0d1a2b;   /* secciones alternas */
+  --bg-card:       #0f1e30;   /* fondo de tarjetas */
+  --bg-card-hover: #12c9e944;   /* tarjeta al pasar el cursor */
+
+  /* Colores de acento cyberpunk */
+  --cyan:          #00f5ff;   /* cian neón principal */
+  --cyan-dim:      #00b8cc;   /* cian oscurecido */
+  --magenta:       #ff00a0;   /* magenta neón */
+  --yellow:        #f5e642;   /* amarillo eléctrico */
+  --purple:        #8b5cf6;   /* púrpura acento */
+
+  /* Texto */
+  --text-primary:  #e2f0ff;
+  --text-secondary:#7a9ab8;
+  --text-muted:    #3d5a78;
+
+  /* Bordes */
+  --border:        rgba(0, 245, 255, 0.15);
+  --border-bright: rgba(0, 245, 255, 0.5);
+
+  /* Tipografías:
+     - Orbitron   → títulos y encabezados
+     - Share Tech Mono → código y etiquetas
+     - Exo 2      → cuerpo de texto         */
+  --font-display: 'Orbitron', monospace;
+  --font-mono:    'Share Tech Mono', monospace;
+  --font-body:    'Exo 2', sans-serif;
+
+  /* Transiciones */
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/* ──────────────────────────────────────────────
+   2. RESET Y BASE GLOBAL
+   ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;   /* scroll suave al clicar los anclas de nav */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;        /* evita scroll horizontal */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ──────────────────────────────────────────────
+   3. SCROLLBAR PERSONALIZADA (navegadores webkit)
+   ────────────────────────────────────────────── */
+/*::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-dim);
+  border-radius: 3px;
+}
+*/
+
+/* ──────────────────────────────────────────────
+   4. BARRA DE NAVEGACIÓN
+   ────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+/* Efecto de fondo al hacer scroll (clase añadida por JS) */
+.navbar.scrolled {
+  background: rgba(6, 11, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--border);
+}
+
+/* Logo de la nav */
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+}
+
+.logo-bracket {
+  color: var(--cyan);
+}
+
+/* Lista de enlaces */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  position: relative;
+}
+
+/* Línea inferior animada en hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--cyan);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+
+
+/* ──────────────────────────────────────────────
+   5. SECCIÓN HERO (INICIO)
+   ────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2.5rem 4rem;
+  overflow: hidden;
+}
+
+
+/* Rejilla de fondo animada */
+/*.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridShift 20s linear infinite;
+}
+*/
+
+@keyframes gridShift {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* Partículas flotantes decorativas */
+/*.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+*/
+
+/*.particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+  */
+
+/* Posición y timing distintos para cada partícula */
+/*.particles span:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s;   animation-duration: 7s; }
+.particles span:nth-child(2) { top: 60%; left: 80%; animation-delay: 1.5s; animation-duration: 9s; background: var(--magenta); }
+.particles span:nth-child(3) { top: 40%; left: 50%; animation-delay: 3s;   animation-duration: 6s; background: var(--yellow); opacity: 0.4; }
+.particles span:nth-child(4) { top: 75%; left: 25%; animation-delay: 2s;   animation-duration: 8s; }
+.particles span:nth-child(5) { top: 10%; left: 70%; animation-delay: 4s;   animation-duration: 10s; background: var(--purple); }
+.particles span:nth-child(6) { top: 85%; left: 60%; animation-delay: 0.5s; animation-duration: 7.5s; }
+*/
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50%       { transform: translateY(-30px) scale(1.5); opacity: 1; }
+}
+
+/* Contenido principal del hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+/* Badge de estado */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 245, 255, 0.05);
+}
+
+/* Punto pulsante de estado activo */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Título del hero */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Las dos líneas del nombre */
+.title-line {
+  display: block;
+}
+
+/* Segunda línea con color de acento */
+.title-line.accent {
+  color: var(--cyan);
+  text-shadow: 0 0 30px rgba(0, 245, 255, 0.4);
+}
+
+/* Línea del curso */
+.hero-course {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.course-label {
+  color: var(--magenta);
+  margin-right: 0.5rem;
+}
+
+/* Descripción del portafolio */
+.hero-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+}
+
+/* Grupo inferior: botón + estadísticas */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botón CTA principal */
+.btn-primary {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--bg-dark);
+  background: var(--cyan);
+  padding: 0.85rem 2rem;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--magenta);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 0, 160, 0.4);
+}
+
+/* Estadísticas rápidas */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--cyan);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  margin-top: 0.2rem;
+}
+
+.stat-divider {
+  color: var(--text-muted);
+  font-size: 1.5rem;
+}
+
+/* Decoración geométrica derecha del hero */
+.hero-deco {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.deco-ring {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 20s linear infinite;
+}
+
+.deco-ring--2 {
+  width: 200px;
+  height: 200px;
+  border-color: rgba(255, 0, 160, 0.15);
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.deco-cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--cyan);
+  opacity: 0.5;
+  animation: pulseStar 3s ease-in-out infinite;
+}
+
+@keyframes pulseStar {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 0.8; transform: translate(-50%, -50%) scale(1.3); }
+}
+
+
+/* ──────────────────────────────────────────────
+   6. SECCIONES DE TRABAJOS
+   ────────────────────────────────────────────── */
+.work-section {
+  padding: 6rem 2.5rem;
+  background: var(--bg-dark);
+}
+
+/* Secciones alternas con fondo diferente */
+.work-section--alt {
+  background: var(--bg-mid);
+}
+
+/* Encabezado de sección */
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Número grande de sección (01, 02…) */
+.section-number {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--border-bright);
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+/* Título de sección */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+/* Subtítulo de sección */
+.section-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+
+/* ──────────────────────────────────────────────
+   7. CUADRÍCULA DE TARJETAS (CARDS)
+   ────────────────────────────────────────────── */
+
+/* Grid responsive: 1 col en móvil, 3 en escritorio */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta base */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  /* Esquina recortada estilo cyberpunk */
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+/* Línea de acento izquierda */
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+/* Brillo en hover */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 245, 255, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.card:hover {
+  /*transform: translateY(-6px);*/
+  border-color: var(--border-bright);
+  background: var(--bg-card-hover);
+  box-shadow:
+    0 8px 30px rgba(0, 245, 255, 0.1),
+    0 0 0 1px var(--border);
+}
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Tarjeta destacada (card--featured): acento diferente */
+.card--featured {
+  border-color: rgba(255, 0, 160, 0.2);
+}
+
+.card--featured::before {
+  background: linear-gradient(to bottom, var(--magenta), transparent);
+}
+
+.card--featured:hover {
+  border-color: rgba(255, 0, 160, 0.6);
+  box-shadow: 0 8px 30px rgba(255, 0, 160, 0.1);
+}
+
+/* Encabezado de la tarjeta: ícono + etiqueta */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+/* Ícono/emoji grande de la tarjeta */
+.card-icon {
+  font-size: 1.5rem;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.card--featured .card-icon {
+  color: var(--magenta);
+}
+
+/* Etiqueta de herramienta/categoría */
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--cyan-dim);
+  background: rgba(0, 245, 255, 0.08);
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+}
+
+.card--featured .card-tag {
+  color: var(--magenta);
+  background: rgba(255, 0, 160, 0.08);
+}
+
+/* Título de la tarjeta */
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Descripción del proyecto */
+.card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+/* Etiquetas de tecnologías usadas */
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-tech span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border: 1px solid var(--text-muted);
+  padding: 0.2rem 0.5rem;
+  opacity: 0.7;
+}
+
+/* Footer de la tarjeta: enlace de acción */
+.card-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.card-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+  transition: color var(--transition), letter-spacing var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-link span {
+  transition: transform var(--transition);
+}
+
+.card-link:hover {
+  color: var(--magenta);
+  letter-spacing: 0.3em;
+}
+
+.card-link:hover span {
+  transform: translateX(4px);
+}
+
+.card--featured .card-link {
+  color: var(--magenta);
+}
+
+.card--featured .card-link:hover {
+  color: var(--cyan);
+}
+
+
+/* ──────────────────────────────────────────────
+   8. PIE DE PÁGINA (FOOTER)
+   ────────────────────────────────────────────── */
+.footer {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
