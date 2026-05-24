@@ -3,277 +3,1462 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio Digital </title>
-
-  <!-- Enlace al archivo CSS externo -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Google Fonts: tipografías con estética cyberpunk/futurista -->
+  <!-- ▼ CAMBIA el título con tu nombre -->
+  <title>Portafolio Digital | Nombre Apellido | UTS 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fuentes: Orbitron (títulos) + Share Tech Mono (código/etiquetas) + Exo 2 (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- =============================================
-       BARRA DE NAVEGACIÓN
-       Enlaza a cada sección mediante anclas (#id)
-  ============================================= -->
-  <nav class="navbar">
-    <div class="nav-logo">
-      <span class="logo-bracket">[</span>PORTAFOLIO<span class="logo-bracket">]</span>
-    </div>
-    <!--llamar a las secciones-->
-    <ul class="nav-links">
-      <li><a href="#inicio">INICIO</a></li>
-      <li><a href="#trabajo1">PRIMER CORTE</a></li>
-      <li><a href="#trabajo2">SCRATCH</a> </li>
-     
-      
-    </ul>
-    
-  </nav>
+  <!-- ============================================================
+       CURSOR PERSONALIZADO (se crea dinámicamente desde script.js)
+  ============================================================ -->
+
+  <!-- ============================================================
+       BARRA DE NAVEGACIÓN FIJA
+       Contiene los 11 enlaces a las secciones requeridas.
+       En móvil se colapsa con el botón hamburguesa.
+  ============================================================ -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="#inicio" class="nav-logo">
+        <span class="bracket">[</span>PORTAFOLIO<span class="bracket">]</span>
+      </a>
+
+      <!-- Menú principal (desktop) -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#presentacion">PERFIL</a></li>
+        <li><a href="#objetivos">OBJETIVOS</a></li>
+        <li><a href="#fase1">FASE 1</a></li>
+        <li><a href="#fase2">FASE 2</a></li>
+        <li><a href="#fase3">FASE 3</a></li>
+        <li><a href="#fase4">FASE 4</a></li>
+        <li><a href="#reflexiones">REFLEXIONES</a></li>
+        <li><a href="#conclusiones">CONCLUSIONES</a></li>
+        <li><a href="#autoevaluacion">AUTOEVAL.</a></li>
+        <li><a href="#referencias">REFERENCIAS</a></li>
+      </ul>
+
+      <!-- Botón hamburguesa para móviles -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
 
- 
-  <section id="inicio" class="hero">  
-    <!-- Fondo animado con líneas de rejilla -->
-    <div class="hero-grid"></div>
- 
-    <!-- Partículas decorativas flotantes -->
-    <div class="particles">
-      <span></span><span></span><span></span>
-      <span></span><span></span><span></span>
-    </div>
-    <div class="hero-content">
+  <main>
 
-       
-      
-      <div class="status-badge">
-        <span class="status-dot"></span> SISTEMA ACTIVO
+    <!-- ============================================================
+         SECCIÓN 1: PORTADA / INICIO
+         Requerido: nombre, programa, semestre, materia, foto/avatar,
+         frase motivacional y resumen del portafolio.
+         ▼ RELLENA los campos marcados con "CAMBIA".
+    ============================================================ -->
+    <section id="inicio" class="section hero-section">
+      <!-- Fondo animado: rejilla + partículas -->
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="particles" aria-hidden="true" id="particles"></div>
+
+      <div class="hero-body">
+
+        <!-- Columna izquierda: texto -->
+        <div class="hero-text">
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span class="mono">PORTAFOLIO DIGITAL INTEGRADO · UTS 2026</span>
+          </div>
+
+          <!-- ▼ CAMBIA: tu nombre completo -->
+          <h1 class="hero-name">
+            <span class="line-top">NOMBRE</span>
+            <span class="line-bottom accent-cyan">APELLIDO</span>
+          </h1>
+
+          <div class="hero-meta">
+            <!-- ▼ CAMBIA: tu programa académico -->
+            <div class="meta-item">
+              <span class="meta-label mono">PROGRAMA //</span>
+              <span class="meta-value">Tecnología en Desarrollo de Sistemas Informáticos</span>
+            </div>
+            <!-- ▼ CAMBIA: tu semestre -->
+            <div class="meta-item">
+              <span class="meta-label mono">SEMESTRE //</span>
+              <span class="meta-value">Cuarto / Quinto — 2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label mono">MATERIA //</span>
+              <span class="meta-value">Desarrollo de Contenidos Digitales y Multimediales</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label mono">INSTITUCIÓN //</span>
+              <span class="meta-value">Unidades Tecnológicas de Santander</span>
+            </div>
+          </div>
+
+          <!-- ▼ CAMBIA: tu frase motivacional -->
+          <blockquote class="hero-quote">
+            "El conocimiento digital no se acumula, se construye, se comparte y se transforma."
+          </blockquote>
+
+          <!-- ▼ CAMBIA: resumen breve de tu portafolio -->
+          <p class="hero-summary">
+            Este portafolio digital integra todas las evidencias de aprendizaje desarrolladas
+            durante el semestre: fundamentos del diseño digital, uso pedagógico de inteligencia
+            artificial, programación educativa con Scratch, desarrollo de aplicaciones móviles
+            con App Inventor y construcción de recursos multimediales.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#presentacion" class="btn-primary">EXPLORAR PORTAFOLIO</a>
+            <a href="#fase1" class="btn-outline">VER TRABAJOS</a>
+          </div>
+        </div>
+
+        <!-- Columna derecha: avatar / foto -->
+        <div class="hero-avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-ring ring-2"></div>
+          <div class="avatar-frame">
+            <!--
+              ▼ CAMBIA: reemplaza el div.avatar-placeholder por:
+              <img src="img/tu-foto.jpg" alt="Foto de Nombre Apellido" class="avatar-img" />
+            -->
+            <div class="avatar-placeholder">
+              <span class="avatar-icon">◈</span>
+              <span class="avatar-hint mono">TU FOTO AQUÍ<br/>img/foto.jpg</span>
+            </div>
+          </div>
+          <!-- Etiquetas flotantes decorativas -->
+          <div class="float-tag tag-1 mono">HTML5</div>
+          <div class="float-tag tag-2 mono">CSS3</div>
+          <div class="float-tag tag-3 mono">JS</div>
+          <div class="float-tag tag-4 mono">AI</div>
+        </div>
+
+      </div><!-- /hero-body -->
+
+      <!-- Scroll indicator -->
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="mono">SCROLL</span>
+        <div class="scroll-line"></div>
       </div>
+    </section><!-- /#inicio -->
 
-      
-      <h3 class="hero-title">
-        <span class="title-line">CREACION DE CONTENIDOS DIGITALES Y </span>
-        <span class="title-line accent">MULTIMEDIALES B193 </span>
-      </h3>
 
-      <p class="hero-course">
-        <span class="course-label">ESTUDIANTES //</span>
-        FIDEL GARCIA MARTINEZ - LUIS EDUARDO MUÑOZ AVILA
-      </p>
+    <!-- ============================================================
+         SECCIÓN 2: PRESENTACIÓN PERSONAL
+         Requerido: foto, datos académicos, competencias adquiridas,
+         expectativas y enlace a redes académicas.
+    ============================================================ -->
+    <section id="presentacion" class="section alt-section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">02</span>
+          <div>
+            <h2 class="sec-title">PRESENTACIÓN PERSONAL</h2>
+            <p class="sec-sub mono">Perfil académico y competencias</p>
+          </div>
+        </div>
 
-  
+        <div class="profile-grid">
 
-      <div class="hero-cta">
-        <a href="#trabajo1" class="btn-primary">VER TRABAJOS</a>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Proyectos</span></div>
-          <div class="stat-divider">/</div>
-          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Cortes</span></div>
+          <!-- Foto y datos básicos -->
+          <div class="profile-card card-glow">
+            <div class="profile-photo-wrap">
+              <!--
+                ▼ CAMBIA: <img src="img/tu-foto.jpg" alt="Nombre Apellido" class="profile-photo" />
+              -->
+              <div class="profile-photo-placeholder">
+                <span>◈</span>
+                <small class="mono">img/foto.jpg</small>
+              </div>
+            </div>
+            <div class="profile-info">
+              <!-- ▼ CAMBIA todos los campos -->
+              <h3 class="profile-name accent-cyan">NOMBRE APELLIDO</h3>
+              <p class="mono small-text">Estudiante · UTS</p>
+              <div class="profile-data">
+                <div class="data-row"><span class="mono label-tag">ID</span><span>▼ Tu código estudiantil</span></div>
+                <div class="data-row"><span class="mono label-tag">PROGRAMA</span><span>Tec. en Desarrollo de Sistemas</span></div>
+                <div class="data-row"><span class="mono label-tag">SEMESTRE</span><span>▼ Tu semestre</span></div>
+                <div class="data-row"><span class="mono label-tag">DOCENTE</span><span>▼ Nombre del docente</span></div>
+              </div>
+              <!-- ▼ CAMBIA: tus redes académicas -->
+              <div class="social-links">
+                <a href="#" class="social-btn mono" target="_blank" rel="noopener">⟨ GitHub ⟩</a>
+                <a href="#" class="social-btn mono" target="_blank" rel="noopener">⟨ LinkedIn ⟩</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Competencias adquiridas -->
+          <div class="competencias-wrap">
+            <h3 class="subsec-title">COMPETENCIAS ADQUIRIDAS</h3>
+            <!--
+              ▼ CAMBIA: cada <li> con una competencia real que hayas desarrollado.
+                Ajusta el porcentaje (--pct) al nivel que sientes.
+            -->
+            <ul class="competencias-list">
+              <li class="comp-item">
+                <div class="comp-header">
+                  <span class="comp-name">Diseño Digital y Multimedia</span>
+                  <span class="comp-pct mono">▼%</span>
+                </div>
+                <div class="comp-bar"><div class="comp-fill" style="--pct: 80%"></div></div>
+              </li>
+              <li class="comp-item">
+                <div class="comp-header">
+                  <span class="comp-name">Inteligencia Artificial Generativa</span>
+                  <span class="comp-pct mono">▼%</span>
+                </div>
+                <div class="comp-bar"><div class="comp-fill" style="--pct: 75%"></div></div>
+              </li>
+              <li class="comp-item">
+                <div class="comp-header">
+                  <span class="comp-name">Programación Educativa (Scratch)</span>
+                  <span class="comp-pct mono">▼%</span>
+                </div>
+                <div class="comp-bar"><div class="comp-fill" style="--pct: 70%"></div></div>
+              </li>
+              <li class="comp-item">
+                <div class="comp-header">
+                  <span class="comp-name">Desarrollo de Apps (App Inventor)</span>
+                  <span class="comp-pct mono">▼%</span>
+                </div>
+                <div class="comp-bar"><div class="comp-fill" style="--pct: 65%"></div></div>
+              </li>
+              <li class="comp-item">
+                <div class="comp-header">
+                  <span class="comp-name">Desarrollo Web (HTML/CSS/JS)</span>
+                  <span class="comp-pct mono">▼%</span>
+                </div>
+                <div class="comp-bar"><div class="comp-fill" style="--pct: 85%"></div></div>
+              </li>
+            </ul>
+
+            <!-- Expectativas del portafolio -->
+            <div class="expectativas-box">
+              <h4 class="mono accent-magenta">// EXPECTATIVAS DEL PORTAFOLIO</h4>
+              <!--
+                ▼ CAMBIA: escribe en 2-3 oraciones qué esperas demostrar
+                  con este portafolio y qué significa para tu desarrollo profesional.
+              -->
+              <p>
+                ▼ Escribe aquí tus expectativas personales sobre este portafolio.
+                ¿Qué quieres demostrar? ¿Qué habilidades destacarás?
+                ¿Cómo se conecta con tu perfil profesional futuro?
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /profile-grid -->
+      </div>
+    </section><!-- /#presentacion -->
+
+
+    <!-- ============================================================
+         SECCIÓN 3: INTRODUCCIÓN Y OBJETIVOS
+         Requerido: descripción del portafolio, propósito pedagógico,
+         competencias desarrolladas y objetivos de aprendizaje.
+    ============================================================ -->
+    <section id="objetivos" class="section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">03</span>
+          <div>
+            <h2 class="sec-title">INTRODUCCIÓN Y OBJETIVOS</h2>
+            <p class="sec-sub mono">Propósito pedagógico y competencias del semestre</p>
+          </div>
+        </div>
+
+        <div class="objetivos-grid">
+
+          <!-- Descripción / Introducción -->
+          <div class="intro-block card-base">
+            <h3 class="subsec-title accent-cyan">DESCRIPCIÓN DEL PORTAFOLIO</h3>
+            <!--
+              ▼ CAMBIA: redacta 2-3 párrafos describiendo de qué trata
+                el portafolio, qué contiene y cómo está organizado.
+                Mínimo 150 palabras recomendados.
+            -->
+            <p>
+              ▼ Escribe aquí la descripción general del portafolio. Explica qué es,
+              qué contiene, cómo está organizado y por qué es relevante para tu
+              formación académica y profesional.
+            </p>
+            <p style="margin-top:1rem;">
+              ▼ Segundo párrafo: contexto educativo de la asignatura "Desarrollo de
+              Contenidos Digitales y Multimediales" en el programa de Tecnología en
+              Desarrollo de Sistemas Informáticos de la UTS.
+            </p>
+          </div>
+
+          <!-- Objetivo general -->
+          <div class="obj-general card-base">
+            <div class="obj-icon accent-cyan">⊙</div>
+            <h3 class="subsec-title">OBJETIVO GENERAL</h3>
+            <!--
+              ▼ CAMBIA: transcribe o parafrasea el objetivo general del proyecto
+                tal como aparece en tu guía o adaptado a tu caso personal.
+            -->
+            <p>
+              ▼ Integrar y presentar de manera organizada, creativa e interactiva
+              las evidencias de aprendizaje desarrolladas durante el semestre,
+              demostrando competencias en diseño de contenidos digitales, uso de
+              herramientas tecnológicas, inteligencia artificial, programación
+              educativa y desarrollo de recursos multimediales.
+            </p>
+          </div>
+
+          <!-- Objetivos específicos -->
+          <div class="obj-especificos card-base">
+            <h3 class="subsec-title">OBJETIVOS ESPECÍFICOS</h3>
+            <!--
+              ▼ CAMBIA: personaliza cada objetivo según tu proceso real.
+            -->
+            <ol class="obj-list">
+              <li>
+                <span class="obj-marker accent-cyan mono">01</span>
+                <span>Diseñar y publicar una página web educativa responsiva alojada en GitHub Pages o Netlify.</span>
+              </li>
+              <li>
+                <span class="obj-marker accent-cyan mono">02</span>
+                <span>Integrar todos los productos y evidencias de aprendizaje generados durante el semestre.</span>
+              </li>
+              <li>
+                <span class="obj-marker accent-cyan mono">03</span>
+                <span>Documentar el proceso de desarrollo mediante un informe técnico-académico con normas APA 7.</span>
+              </li>
+              <li>
+                <span class="obj-marker accent-cyan mono">04</span>
+                <span>Demostrar el uso responsable de herramientas de inteligencia artificial generativa.</span>
+              </li>
+              <li>
+                <span class="obj-marker accent-cyan mono">05</span>
+                <span>Presentar y sustentar el portafolio digital ante el docente en la fecha establecida.</span>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Propósito pedagógico -->
+          <div class="proposito-block card-base">
+            <h3 class="subsec-title accent-magenta">PROPÓSITO PEDAGÓGICO</h3>
+            <!--
+              ▼ CAMBIA: explica con tus palabras por qué construir este
+                portafolio aporta a tu aprendizaje.
+            -->
+            <p>
+              ▼ Explica el propósito pedagógico de este portafolio: ¿qué aprenderás
+              al construirlo? ¿Cómo demuestra tus competencias? ¿Qué valor tiene
+              para tu formación como Tecnólogo en Desarrollo de Sistemas?
+            </p>
+          </div>
+
+        </div><!-- /objetivos-grid -->
+      </div>
+    </section><!-- /#objetivos -->
+
+
+    <!-- ============================================================
+         SECCIÓN 4: FASE 1 — FUNDAMENTOS Y CONTENIDOS DIGITALES
+         Requerido: reflexión escrita, infografía interactiva, video
+         educativo, presentación interactiva, matriz de planeación.
+    ============================================================ -->
+    <section id="fase1" class="section alt-section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">04</span>
+          <div>
+            <h2 class="sec-title">FASE 1 — FUNDAMENTOS DEL DISEÑO DIGITAL</h2>
+            <p class="sec-sub mono">Semanas 1–4 · Diseño, contenidos y planeación</p>
+          </div>
+        </div>
+
+        <div class="fase-grid">
+
+          <!-- PRODUCTO 1: Reflexión escrita -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">✎</span>
+              <span class="product-tag mono">Producto 1</span>
+            </div>
+            <h3 class="product-title">Reflexión Escrita</h3>
+            <p class="product-desc">
+              Análisis de fundamentos del diseño digital, principios multimedia de Mayer,
+              tendencias del diseño interactivo, licenciamiento y buenas prácticas educativas.
+            </p>
+            <!-- Área de contenido editable -->
+            <div class="content-area">
+              <!--
+                ▼ OPCIONES para insertar tu reflexión:
+                OPCIÓN A — Texto directo:
+                  <p>Escribe aquí tu reflexión completa...</p>
+
+                OPCIÓN B — Enlace a documento:
+                  <a href="media/reflexion.pdf" class="resource-link mono" target="_blank">
+                    ⟨ Ver documento PDF ⟩
+                  </a>
+
+                OPCIÓN C — Iframe de Google Docs (compartido):
+                  <iframe src="URL_GOOGLE_DOCS/preview" class="doc-iframe"></iframe>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">✎</span>
+                <p class="mono">▼ INSERTA TU REFLEXIÓN ESCRITA</p>
+                <p class="ph-hint">Texto directo, enlace a PDF o iframe de Google Docs</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>Canva</span><span>Word</span><span>Google Docs</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 2: Infografía interactiva -->
+          <article class="product-card featured-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">⬡</span>
+              <span class="product-tag mono featured-tag">Producto 2</span>
+            </div>
+            <h3 class="product-title">Infografía Interactiva</h3>
+            <p class="product-desc">
+              Síntesis visual e interactiva sobre contenidos digitales o IA generativa
+              con texto, imágenes y elementos navegables.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ OPCIÓN RECOMENDADA — Iframe de Canva o Genially:
+                  <iframe src="URL_CANVA_O_GENIALLY" class="media-iframe"
+                    allowfullscreen loading="lazy"></iframe>
+
+                  Para Canva: Compartir → Insertar → copiar la URL del src=""
+                  Para Genially: Publicar → Insertar → copiar el src=""
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">⬡</span>
+                <p class="mono">▼ INSERTA EL IFRAME DE CANVA / GENIALLY</p>
+                <p class="ph-hint">Ejemplo: &lt;iframe src="https://www.canva.com/..." class="media-iframe"&gt;&lt;/iframe&gt;</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>Canva</span><span>Genially</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 3: Video educativo -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">▶</span>
+              <span class="product-tag mono">Producto 3</span>
+            </div>
+            <h3 class="product-title">Video Educativo</h3>
+            <p class="product-desc">
+              Video introductorio (2–5 min) sobre contenidos digitales con narración,
+              subtítulos y diseño visual coherente.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ OPCIÓN A — Iframe de YouTube:
+                  <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID"
+                    class="media-iframe" allowfullscreen loading="lazy"
+                    title="Video educativo"></iframe>
+
+                ▼ OPCIÓN B — Video local:
+                  <video controls class="media-iframe">
+                    <source src="media/video-educativo.mp4" type="video/mp4" />
+                  </video>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">▶</span>
+                <p class="mono">▼ INSERTA EL IFRAME DE YOUTUBE O &lt;video&gt;</p>
+                <p class="ph-hint">YouTube: https://www.youtube.com/embed/ID_DEL_VIDEO</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>CapCut</span><span>Powtoon</span><span>Canva</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 4: Presentación interactiva -->
+          <article class="product-card featured-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">◫</span>
+              <span class="product-tag mono featured-tag">Producto 4</span>
+            </div>
+            <h3 class="product-title">Presentación Interactiva</h3>
+            <p class="product-desc">
+              Presentación sobre IA generativa con mínimo 8 diapositivas,
+              navegación interna y recursos visuales (Canva o Genially).
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Iframe de Canva Presentación o Genially:
+                  <iframe src="URL_PRESENTACION" class="media-iframe"
+                    allowfullscreen loading="lazy"></iframe>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">◫</span>
+                <p class="mono">▼ INSERTA EL IFRAME DE TU PRESENTACIÓN</p>
+                <p class="ph-hint">Canva o Genially · Mínimo 8 diapositivas</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>Canva</span><span>Genially</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 5: Matriz de planeación -->
+          <article class="product-card wide-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">≡</span>
+              <span class="product-tag mono">Producto 5</span>
+            </div>
+            <h3 class="product-title">Matriz de Planeación del Portafolio</h3>
+            <p class="product-desc">
+              Documento que planifica los contenidos del portafolio: objetivos, audiencia,
+              estructura, herramientas y cronograma personal.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ OPCIÓN A — Tabla HTML directa (recomendada para web):
+                  Copia tu matriz aquí como tabla HTML.
+
+                ▼ OPCIÓN B — Enlace a documento:
+                  <a href="media/matriz-planeacion.pdf" class="resource-link mono" target="_blank">
+                    ⟨ Ver Matriz en PDF ⟩
+                  </a>
+
+                ▼ OPCIÓN C — Iframe Google Sheets:
+                  <iframe src="URL_GOOGLE_SHEETS/preview" class="doc-iframe"></iframe>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">≡</span>
+                <p class="mono">▼ INSERTA TU MATRIZ DE PLANEACIÓN</p>
+                <p class="ph-hint">Tabla HTML, enlace a PDF o iframe de Google Sheets</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>Word</span><span>Google Docs</span>
+            </div>
+          </article>
+
+        </div><!-- /fase-grid -->
+      </div>
+    </section><!-- /#fase1 -->
+
+
+    <!-- ============================================================
+         SECCIÓN 5: FASE 2 — IA Y PROGRAMACIÓN EDUCATIVA
+         Requerido: prompts, recursos de texto con IA, recursos
+         visuales con IA, actividad Scratch asistida, personalización.
+    ============================================================ -->
+    <section id="fase2" class="section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">05</span>
+          <div>
+            <h2 class="sec-title">FASE 2 — IA Y PROGRAMACIÓN EDUCATIVA</h2>
+            <p class="sec-sub mono">11–12 mayo 2026 · Inteligencia artificial generativa</p>
+          </div>
+        </div>
+
+        <div class="fase-grid">
+
+          <!-- PRODUCTO 1: Prompts educativos -->
+          <article class="product-card wide-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">&lt;/&gt;</span>
+              <span class="product-tag mono">Producto 1</span>
+            </div>
+            <h3 class="product-title">Diseño de Prompts Educativos</h3>
+            <p class="product-desc">
+              Mínimo 4 prompts diseñados bajo la anatomía:
+              <strong>rol + contexto + tarea + formato + restricción</strong>.
+              Incluye ejemplos de outputs generados.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ ESTRUCTURA SUGERIDA para cada prompt:
+                <div class="prompt-block">
+                  <h4 class="mono accent-cyan">Prompt #1 — [Nombre descriptivo]</h4>
+                  <table class="prompt-table">
+                    <tr><td class="mono">ROL</td><td>Actúa como...</td></tr>
+                    <tr><td class="mono">CONTEXTO</td><td>En el contexto de...</td></tr>
+                    <tr><td class="mono">TAREA</td><td>Genera / Explica / Crea...</td></tr>
+                    <tr><td class="mono">FORMATO</td><td>Responde en formato...</td></tr>
+                    <tr><td class="mono">RESTRICCIÓN</td><td>No incluyas / Limita a...</td></tr>
+                  </table>
+                  <h5 class="mono" style="margin-top:1rem">Output generado:</h5>
+                  <div class="output-box">[Pega aquí la respuesta de la IA]</div>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">&lt;/&gt;</span>
+                <p class="mono">▼ INSERTA TUS 4 PROMPTS CON SU ANATOMÍA Y OUTPUTS</p>
+                <p class="ph-hint">Rol · Contexto · Tarea · Formato · Restricción</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>ChatGPT</span><span>Gemini</span><span>Claude</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 2: Recursos de texto con IA -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">≋</span>
+              <span class="product-tag mono featured-tag">Producto 2</span>
+            </div>
+            <h3 class="product-title">Recursos de Texto con IA</h3>
+            <p class="product-desc">
+              Textos explicativos, resúmenes o guías de estudio generados con IA
+              y editados pedagógicamente. Mínimo 2 recursos con reflexión de uso.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Para cada recurso incluye:
+                  - El texto generado y editado
+                  - El prompt utilizado
+                  - Reflexión sobre el uso de IA (¿cómo lo editaste? ¿qué cambiaste?)
+
+                <div class="resource-item">
+                  <h4 class="mono">Recurso 1: [Título]</h4>
+                  <div class="prompt-used mono">Prompt: "..."</div>
+                  <p>[Texto generado y editado]</p>
+                  <div class="reflexion-ia accent-yellow">
+                    <strong>Reflexión de uso:</strong> ...
+                  </div>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">≋</span>
+                <p class="mono">▼ INSERTA TUS 2 RECURSOS DE TEXTO CON IA</p>
+                <p class="ph-hint">Incluye el prompt usado y reflexión sobre el proceso</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>ChatGPT</span><span>Gemini</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 3: Recursos visuales con IA -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">◈</span>
+              <span class="product-tag mono">Producto 3</span>
+            </div>
+            <h3 class="product-title">Recursos Visuales con IA</h3>
+            <p class="product-desc">
+              Infografías, imágenes o videos generados con IA.
+              Mínimo 2 recursos con evidencia del prompt utilizado.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Para cada recurso visual:
+                <div class="visual-resource">
+                  <img src="img/ia-visual-1.jpg" alt="Descripción del recurso" class="resource-img" />
+                  <div class="prompt-used mono">Prompt: "..."</div>
+                  <div class="tool-used mono">Herramienta: DALL-E / Canva IA / Firefly</div>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">◈</span>
+                <p class="mono">▼ INSERTA TUS RECURSOS VISUALES GENERADOS CON IA</p>
+                <p class="ph-hint">img/recurso-ia-1.jpg · img/recurso-ia-2.jpg · + prompt utilizado</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>DALL-E</span><span>Canva IA</span><span>Firefly</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 4: Actividad Scratch con IA -->
+          <article class="product-card featured-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">◎</span>
+              <span class="product-tag mono featured-tag">Producto 4</span>
+            </div>
+            <h3 class="product-title">Actividad de Programación Creativa</h3>
+            <p class="product-desc">
+              Juego, historia interactiva o simulación educativa en Scratch,
+              con descripción del prompt y proceso creativo asistido por IA.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Incluye:
+                  - El prompt que usaste para que la IA te ayudara a diseñar la actividad
+                  - Captura de pantalla del proyecto en Scratch
+                  - Descripción del proceso creativo
+                <img src="img/scratch-ia.png" alt="Actividad Scratch con IA" class="resource-img" />
+                <div class="prompt-used mono">Prompt IA: "..."</div>
+                <p>Descripción del proceso...</p>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">◎</span>
+                <p class="mono">▼ DESCRIBE EL PROCESO CREATIVO + PROMPT IA + CAPTURA SCRATCH</p>
+                <p class="ph-hint">img/scratch-ia.png</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>Scratch</span><span>ChatGPT</span>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 5: Personalización del aprendizaje -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">⊡</span>
+              <span class="product-tag mono">Producto 5</span>
+            </div>
+            <h3 class="product-title">Personalización del Aprendizaje con IA</h3>
+            <p class="product-desc">
+              Ejercicios o evaluaciones adaptadas al nivel del estudiante
+              usando IA. Mínimo 1 ejemplo con evidencia del prompt.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Incluye el ejercicio/evaluación generado y el prompt usado.
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">⊡</span>
+                <p class="mono">▼ INSERTA EL EJERCICIO PERSONALIZADO Y EL PROMPT USADO</p>
+                <p class="ph-hint">Quiz, guía o evaluación adaptada con IA</p>
+              </div>
+            </div>
+            <div class="product-tools mono">
+              <span>ChatGPT</span><span>Gemini</span>
+            </div>
+          </article>
+
+        </div><!-- /fase-grid -->
+      </div>
+    </section><!-- /#fase2 -->
+
+
+    <!-- ============================================================
+         SECCIÓN 6: FASE 3 — PROYECTO EN SCRATCH
+         Requerido: marco conceptual, ejercicios básicos,
+         proyecto completo embebido, capturas y documentación.
+    ============================================================ -->
+    <section id="fase3" class="section alt-section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">06</span>
+          <div>
+            <h2 class="sec-title">FASE 3 — PROYECTO EN SCRATCH</h2>
+            <p class="sec-sub mono">18–19 mayo 2026 · Programación educativa por bloques</p>
+          </div>
+        </div>
+
+        <div class="fase-grid">
+
+          <!-- Marco conceptual -->
+          <article class="product-card wide-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">⊙</span>
+              <span class="product-tag mono">Marco Conceptual</span>
+            </div>
+            <h3 class="product-title">¿Qué es Scratch?</h3>
+            <p class="product-desc">
+              Documento con: definición, interfaz, bloques principales, usos educativos
+              y enlace a la plataforma.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Escribe o pega aquí el marco conceptual de Scratch.
+                  Incluye: qué es, interfaz, bloques principales, usos educativos.
+                  Puedes añadir capturas: <img src="img/scratch-interfaz.png" alt="Interfaz Scratch">
+                  Y el enlace: <a href="https://scratch.mit.edu" target="_blank" class="resource-link mono">
+                    ⟨ Ir a scratch.mit.edu ⟩
+                  </a>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">⊙</span>
+                <p class="mono">▼ ESCRIBE EL MARCO CONCEPTUAL DE SCRATCH</p>
+                <p class="ph-hint">Definición · Interfaz · Bloques · Usos educativos · Link</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ejercicios básicos -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">▣</span>
+              <span class="product-tag mono featured-tag">Ejercicios Básicos</span>
+            </div>
+            <h3 class="product-title">Ejercicios Progresivos en Scratch</h3>
+            <p class="product-desc">
+              Mínimo 3 ejercicios (animación, movimiento, evento) con capturas
+              de pantalla y descripción del objetivo pedagógico.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Para cada ejercicio:
+                <div class="ejercicio-item">
+                  <h4 class="mono accent-cyan">Ejercicio 1 — Animación Simple</h4>
+                  <img src="img/scratch-ej1.png" alt="Ejercicio 1 Scratch" class="resource-img" />
+                  <p><strong>Objetivo pedagógico:</strong> ...</p>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">▣</span>
+                <p class="mono">▼ INSERTA LAS 3 CAPTURAS DE EJERCICIOS + OBJETIVO PEDAGÓGICO</p>
+                <p class="ph-hint">img/scratch-ej1.png · img/scratch-ej2.png · img/scratch-ej3.png</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto Scratch completo (iframe embebido) -->
+          <article class="product-card wide-card featured-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">◉</span>
+              <span class="product-tag mono featured-tag">Proyecto Principal</span>
+            </div>
+            <h3 class="product-title">Proyecto Scratch Educativo</h3>
+            <p class="product-desc">
+              Juego interactivo, historia animada o simulación. Mínimo 3 personajes,
+              condicionales o bucles, pantalla de inicio y fin.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ EMBEBER PROYECTO SCRATCH:
+                  1. Publicar tu proyecto en scratch.mit.edu
+                  2. Ir a "Compartir" → copiar el ID del proyecto (número en la URL)
+                  3. Reemplazar TU_ID_SCRATCH con ese número:
+
+                <iframe src="https://scratch.mit.edu/projects/TU_ID_SCRATCH/embed"
+                  class="scratch-iframe"
+                  allowtransparency="true"
+                  width="485" height="402"
+                  frameborder="0"
+                  scrolling="no"
+                  allowfullscreen
+                  loading="lazy"
+                  title="Proyecto Scratch">
+                </iframe>
+
+                Después del iframe, añade la explicación pedagógica:
+                <div class="pedagogia-box">
+                  <h4 class="mono accent-cyan">// Explicación pedagógica</h4>
+                  <p>¿Qué aprende el usuario con este proyecto?...</p>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">◉</span>
+                <p class="mono">▼ INSERTA EL IFRAME DE TU PROYECTO SCRATCH</p>
+                <p class="ph-hint">https://scratch.mit.edu/projects/TU_ID_SCRATCH/embed</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Capturas y documentación -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">⊞</span>
+              <span class="product-tag mono">Documentación</span>
+            </div>
+            <h3 class="product-title">Capturas del Código (Bloques)</h3>
+            <p class="product-desc">
+              Capturas del código en bloques, del proyecto en funcionamiento
+              y explicación de la intención educativa de cada sección.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Galería de capturas:
+                <div class="gallery-grid">
+                  <figure>
+                    <img src="img/scratch-bloques.png" alt="Bloques de código Scratch" class="resource-img" />
+                    <figcaption class="mono">Figura 1. Bloques de código principales</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="img/scratch-funcionando.png" alt="Proyecto funcionando" class="resource-img" />
+                    <figcaption class="mono">Figura 2. Proyecto en ejecución</figcaption>
+                  </figure>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">⊞</span>
+                <p class="mono">▼ GALERÍA DE CAPTURAS DEL CÓDIGO Y PROYECTO FUNCIONANDO</p>
+                <p class="ph-hint">img/scratch-bloques.png · img/scratch-corriendo.png</p>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /fase-grid -->
+      </div>
+    </section><!-- /#fase3 -->
+
+
+    <!-- ============================================================
+         SECCIÓN 7: FASE 4 — PROTOTIPO EN APP INVENTOR
+         Requerido: marco conceptual, ejercicios, prototipo,
+         capturas y explicación funcional + pedagógica.
+    ============================================================ -->
+    <section id="fase4" class="section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">07</span>
+          <div>
+            <h2 class="sec-title">FASE 4 — PROTOTIPO EN APP INVENTOR</h2>
+            <p class="sec-sub mono">25–26 mayo 2026 · Desarrollo de aplicaciones móviles educativas</p>
+          </div>
+        </div>
+
+        <div class="fase-grid">
+
+          <!-- Marco conceptual App Inventor -->
+          <article class="product-card wide-card">
+            <div class="product-header">
+              <span class="product-icon accent-cyan">◫</span>
+              <span class="product-tag mono">Marco Conceptual</span>
+            </div>
+            <h3 class="product-title">¿Qué es MIT App Inventor?</h3>
+            <p class="product-desc">
+              Documento con: interfaz (Designer/Blocks), componentes principales,
+              ejemplos de usos educativos y enlace a la plataforma.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Escribe el marco conceptual de App Inventor.
+                  Incluye capturas de la interfaz: Designer y Blocks.
+                  <img src="img/appinventor-designer.png" alt="Interfaz Designer de App Inventor" class="resource-img">
+                  <a href="http://appinventor.mit.edu" target="_blank" class="resource-link mono">
+                    ⟨ Ir a appinventor.mit.edu ⟩
+                  </a>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">◫</span>
+                <p class="mono">▼ ESCRIBE EL MARCO CONCEPTUAL DE APP INVENTOR</p>
+                <p class="ph-hint">Interfaz · Componentes · Usos educativos · Link</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ejercicios básicos App Inventor -->
+          <article class="product-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">⟨⟩</span>
+              <span class="product-tag mono featured-tag">Ejercicios</span>
+            </div>
+            <h3 class="product-title">Ejercicios Básicos en App Inventor</h3>
+            <p class="product-desc">
+              Mínimo 2 ejercicios o aplicativos básicos con capturas del diseño
+              (Designer) y de los bloques de código.
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Para cada ejercicio:
+                <div class="ejercicio-item">
+                  <h4 class="mono accent-cyan">Ejercicio 1 — Botón con sonido</h4>
+                  <div class="two-col">
+                    <figure>
+                      <img src="img/app-ej1-designer.png" alt="Designer ejercicio 1" class="resource-img">
+                      <figcaption class="mono">Vista Designer</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="img/app-ej1-bloques.png" alt="Bloques ejercicio 1" class="resource-img">
+                      <figcaption class="mono">Vista Bloques</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">⟨⟩</span>
+                <p class="mono">▼ INSERTA CAPTURAS DESIGNER + BLOQUES DE TUS 2 EJERCICIOS</p>
+                <p class="ph-hint">img/app-ej1-designer.png · img/app-ej1-bloques.png</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Prototipo aplicación educativa -->
+          <article class="product-card featured-card wide-card">
+            <div class="product-header">
+              <span class="product-icon accent-magenta">◉</span>
+              <span class="product-tag mono featured-tag">Prototipo Principal</span>
+            </div>
+            <h3 class="product-title">Aplicación Móvil Educativa</h3>
+            <p class="product-desc">
+              Aplicación con mínimo 2 pantallas funcionales, interacción con el usuario
+              y contenido educativo. (Quiz, guía de estudio, calculadora u otro.)
+            </p>
+            <div class="content-area">
+              <!--
+                ▼ Incluye:
+                  - Nombre y propósito de la app
+                  - Capturas del Designer (pantallas)
+                  - Capturas de los bloques de código
+                  - Captura de la app en el emulador o dispositivo real
+                  - Explicación de funcionalidad y objetivo pedagógico
+
+                <div class="app-showcase">
+                  <h4 class="mono accent-cyan">// [Nombre de tu App]</h4>
+                  <p>Descripción y objetivo pedagógico...</p>
+                  <div class="gallery-grid">
+                    <figure>
+                      <img src="img/app-pantalla1.png" alt="Pantalla 1" class="resource-img">
+                      <figcaption class="mono">Pantalla 1: [nombre]</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="img/app-pantalla2.png" alt="Pantalla 2" class="resource-img">
+                      <figcaption class="mono">Pantalla 2: [nombre]</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="img/app-bloques.png" alt="Bloques de código" class="resource-img">
+                      <figcaption class="mono">Bloques de código</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="img/app-emulador.png" alt="App en emulador" class="resource-img">
+                      <figcaption class="mono">App en emulador / dispositivo</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              -->
+              <div class="placeholder-content">
+                <span class="ph-icon">◉</span>
+                <p class="mono">▼ INSERTA CAPTURAS COMPLETAS DEL PROTOTIPO</p>
+                <p class="ph-hint">Pantallas · Bloques · Emulador · Explicación pedagógica</p>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /fase-grid -->
+      </div>
+    </section><!-- /#fase4 -->
+
+
+    <!-- ============================================================
+         SECCIÓN 8: REFLEXIONES Y APRENDIZAJES
+         Requerido: reflexión crítica por fase, aprendizajes
+         significativos, dificultades y conexión con perfil profesional.
+    ============================================================ -->
+    <section id="reflexiones" class="section alt-section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">08</span>
+          <div>
+            <h2 class="sec-title">REFLEXIONES Y APRENDIZAJES</h2>
+            <p class="sec-sub mono">Análisis crítico del proceso formativo</p>
+          </div>
+        </div>
+
+        <div class="reflexiones-grid">
+
+          <!-- Reflexión Fase 1 -->
+          <div class="reflexion-card" data-fase="FASE 1">
+            <div class="ref-fase-label mono accent-cyan">// FASE 1</div>
+            <h3 class="ref-titulo">Fundamentos del Diseño Digital</h3>
+            <!--
+              ▼ CAMBIA: escribe tu reflexión personal sobre lo aprendido
+                en la fase 1. ¿Qué fue lo más significativo? ¿Qué te costó más?
+                ¿Cómo aplicas esto en tu vida profesional?
+                Mínimo 100 palabras por reflexión.
+            -->
+            <p class="ref-texto">
+              ▼ Escribe aquí tu reflexión sobre la Fase 1. Incluye:
+              aprendizajes significativos, dificultades superadas y
+              cómo conecta con tu perfil profesional como Tecnólogo.
+            </p>
+          </div>
+
+          <!-- Reflexión Fase 2 -->
+          <div class="reflexion-card" data-fase="FASE 2">
+            <div class="ref-fase-label mono accent-magenta">// FASE 2</div>
+            <h3 class="ref-titulo">Inteligencia Artificial Generativa</h3>
+            <p class="ref-texto">
+              ▼ Reflexión sobre el uso ético y pedagógico de la IA.
+              ¿Qué herramientas usaste? ¿Cómo cambió tu manera de crear contenidos?
+              ¿Cuáles son los límites del uso de IA en educación?
+            </p>
+          </div>
+
+          <!-- Reflexión Fase 3 -->
+          <div class="reflexion-card" data-fase="FASE 3">
+            <div class="ref-fase-label mono accent-cyan">// FASE 3</div>
+            <h3 class="ref-titulo">Programación Educativa con Scratch</h3>
+            <p class="ref-texto">
+              ▼ Reflexión sobre la experiencia de programar en Scratch.
+              ¿Qué aprendiste sobre lógica y pensamiento computacional?
+              ¿Cómo Scratch puede usarse en contextos educativos reales?
+            </p>
+          </div>
+
+          <!-- Reflexión Fase 4 -->
+          <div class="reflexion-card" data-fase="FASE 4">
+            <div class="ref-fase-label mono accent-magenta">// FASE 4</div>
+            <h3 class="ref-titulo">Desarrollo de Apps con App Inventor</h3>
+            <p class="ref-texto">
+              ▼ Reflexión sobre el desarrollo de aplicaciones móviles educativas.
+              ¿Qué desafíos encontraste? ¿Qué potencial ves en las apps
+              para la educación? ¿Cómo se conecta con tu carrera?
+            </p>
+          </div>
+
+          <!-- Aprendizajes más significativos -->
+          <div class="reflexion-card wide-ref-card highlight-ref">
+            <div class="ref-fase-label mono accent-cyan">// APRENDIZAJES CLAVE</div>
+            <h3 class="ref-titulo">Lo Más Significativo del Semestre</h3>
+            <!--
+              ▼ Lista los 3-5 aprendizajes más importantes.
+              <ul class="aprendizajes-list">
+                <li><span class="mono accent-cyan">01</span> Aprendizaje 1...</li>
+                <li><span class="mono accent-cyan">02</span> Aprendizaje 2...</li>
+              </ul>
+            -->
+            <p class="ref-texto">
+              ▼ Lista aquí los 3–5 aprendizajes más significativos del semestre,
+              las dificultades que superaste y cómo todo esto conecta con
+              tu perfil profesional como Tecnólogo en Desarrollo de Sistemas.
+            </p>
+          </div>
+
+        </div><!-- /reflexiones-grid -->
+      </div>
+    </section><!-- /#reflexiones -->
+
+
+    <!-- ============================================================
+         SECCIÓN 9: CONCLUSIONES
+         Requerido: síntesis del proceso formativo, competencias
+         consolidadas, propuesta de mejora y proyección profesional.
+    ============================================================ -->
+    <section id="conclusiones" class="section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">09</span>
+          <div>
+            <h2 class="sec-title">CONCLUSIONES</h2>
+            <p class="sec-sub mono">Síntesis del proceso formativo y proyección profesional</p>
+          </div>
+        </div>
+
+        <div class="conclusiones-grid">
+
+          <div class="conclusion-main card-base">
+            <!--
+              ▼ CAMBIA: redacta tus conclusiones. Mínimo 250 palabras.
+                Incluye:
+                  1. Síntesis del proceso formativo del semestre
+                  2. Competencias consolidadas
+                  3. Propuesta de mejora (¿qué harías diferente?)
+                  4. Proyección profesional (¿cómo aplicas esto en tu carrera?)
+            -->
+            <h3 class="subsec-title accent-cyan">SÍNTESIS DEL PROCESO FORMATIVO</h3>
+            <p>▼ Escribe aquí la síntesis del proceso formativo del semestre.</p>
+
+            <h3 class="subsec-title accent-cyan" style="margin-top:2rem">COMPETENCIAS CONSOLIDADAS</h3>
+            <p>▼ Describe las competencias que consolidaste a lo largo del semestre.</p>
+
+            <h3 class="subsec-title accent-magenta" style="margin-top:2rem">PROPUESTA DE MEJORA</h3>
+            <p>▼ ¿Qué mejorarías si volvieras a hacer el proceso? ¿Qué harías diferente?</p>
+
+            <h3 class="subsec-title accent-cyan" style="margin-top:2rem">PROYECCIÓN PROFESIONAL</h3>
+            <p>▼ ¿Cómo aplicas lo aprendido en tu futuro profesional como Tecnólogo?</p>
+          </div>
+
         </div>
       </div>
-    </div>
-
-    <!-- Decoración lateral derecha -->
-    <div class="hero-deco">
-      <div class="deco-ring"></div>
-      <div class="deco-ring deco-ring--2"></div>
-      <div class="deco-cross">☢</div>
-    </div>
-
-   
-  </section>
+    </section><!-- /#conclusiones -->
 
 
+    <!-- ============================================================
+         SECCIÓN 10: AUTOEVALUACIÓN
+         Requerido: autoevaluación cuantitativa y cualitativa.
+         ¿Qué aprendí? ¿Qué mejoraría? ¿Cómo lo aplico?
+    ============================================================ -->
+    <section id="autoevaluacion" class="section alt-section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">10</span>
+          <div>
+            <h2 class="sec-title">AUTOEVALUACIÓN</h2>
+            <p class="sec-sub mono">Valoración crítica y honesta del propio aprendizaje</p>
+          </div>
+        </div>
 
-  <section id="trabajo1" class="work-section">
-    <div class="section-header">
-   
-      <span class="section-number">01</span>
-      <div>
-        <h2 class="section-title">COMPOSICION Y HERRAMIENTAS DE DISEÑO</h2>
-        <p class="section-subtitle">Videos y Presentaciones</p>
+        <div class="autoeval-grid">
+
+          <!-- Autoevaluación cuantitativa por criterio -->
+          <div class="autoeval-quantitative card-base">
+            <h3 class="subsec-title accent-cyan">AUTOEVALUACIÓN CUANTITATIVA</h3>
+            <p class="small-text mono" style="margin-bottom:1.5rem">
+              Valora cada criterio de 0 a 5.0 con honestidad.
+              ▼ CAMBIA los valores (--score) y los porcentajes.
+            </p>
+
+            <!-- ▼ CAMBIA: ajusta la puntuación (--score y el texto) para cada criterio -->
+            <div class="score-item">
+              <div class="score-header">
+                <span>Calidad técnica de la página web</span>
+                <span class="score-val mono accent-cyan">▼ / 5.0</span>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span>Integración y organización del portafolio</span>
+                <span class="score-val mono accent-cyan">▼ / 5.0</span>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span>Creatividad e innovación</span>
+                <span class="score-val mono accent-cyan">▼ / 5.0</span>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 75%"></div></div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span>Uso ético y pedagógico de IA</span>
+                <span class="score-val mono accent-cyan">▼ / 5.0</span>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span>Proyectos Scratch y App Inventor</span>
+                <span class="score-val mono accent-cyan">▼ / 5.0</span>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 75%"></div></div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-header">
+                <span>Reflexión y profundidad académica</span>
+                <span class="score-val mono accent-cyan">▼ / 5.0</span>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 70%"></div></div>
+            </div>
+
+            <!-- Nota final autoevaluada -->
+            <div class="total-score">
+              <span class="mono">NOTA AUTOEVALUADA</span>
+              <!-- ▼ CAMBIA: tu nota autoevaluada -->
+              <span class="total-val accent-cyan">▼.▼ / 5.0</span>
+            </div>
+          </div>
+
+          <!-- Autoevaluación cualitativa -->
+          <div class="autoeval-qualitative card-base">
+            <h3 class="subsec-title accent-magenta">AUTOEVALUACIÓN CUALITATIVA</h3>
+
+            <div class="qual-block">
+              <h4 class="mono accent-cyan">¿QUÉ APRENDÍ?</h4>
+              <!--
+                ▼ CAMBIA: describe los aprendizajes más importantes
+                  de manera personal y reflexiva.
+              -->
+              <p>▼ Escribe qué aprendiste durante el semestre de manera concreta y personal.</p>
+            </div>
+
+            <div class="qual-block">
+              <h4 class="mono accent-cyan">¿QUÉ MEJORARÍA?</h4>
+              <!--
+                ▼ CAMBIA: sé honesto/a sobre lo que harías diferente.
+              -->
+              <p>▼ Escribe qué cambiarías o mejorarías de tu proceso de aprendizaje y del portafolio.</p>
+            </div>
+
+            <div class="qual-block">
+              <h4 class="mono accent-cyan">¿CÓMO LO APLICO EN MI VIDA PROFESIONAL?</h4>
+              <!--
+                ▼ CAMBIA: conecta lo aprendido con tu futuro como Tecnólogo.
+              -->
+              <p>▼ Explica cómo aplicarás lo aprendido en tu carrera como Tecnólogo en Desarrollo de Sistemas.</p>
+            </div>
+          </div>
+
+        </div><!-- /autoeval-grid -->
       </div>
-    </div>
-
-    <div class="cards-grid">
-
- 
-      <article class="card">
-        <div class="card-header">
-          <div class="card-icon">◈</div>
-          <span class="card-tag">Pictory</span>
-        </div>
-        <h3 class="card-title">Reflexión sobre los fundamentos de contenidos digitales y multimediales</h3>
-        <p class="card-desc">
-          Se realiza una reflexión sobre los fundamentos del diseño de contenidos digitales y multimedia, 
-          analizando sus principios, tendencias,
-           roles, licenciamiento y su importancia en la educación.
-        </p>
-        <div class="card-tech">
-       
-          <span>Analisis</span>
-          <span>Reflexion</span>
-          <span>Sintesis</span>
-        </div>
-        <div class="card-footer">
-          
-          <a target="_blank" href="https://video.pictory.ai/202603151508212006bc701995cb449618ff8bba36e2eb115/20260315152933685OWOM0thvxtYqZnH" class="card-link">VER PROYECTO <span>→</span></a>
-        </div>
-      </article>
-
-      <!-- ─── TARJETA 2 ─── -->
-      <article class="card card--featured">
-        <div class="card-header">
-          <div class="card-icon">⬡</div>
-          <span class="card-tag">Power Point</span>
-        </div>
-        <h3 class="card-title">Vídeo Introductorio: Desarrollo de Contenidos Digitales</h3>
-        <p class="card-desc">
-          Se propone una actividad donde los estudiantes visualizan el video,
-          identifican ideas clave sobre el diseño de contenidos digitales y
-           analizan su importancia en la educación.
-        </p>
-        <div class="card-tech">
-          <span>Power Point</span>
-          <span>Analisis</span>
-          <span>Fundamentos</span>
-        </div>
-        <div class="card-footer">
-          <a target="_blank" href="https://drive.google.com/file/d/1aRr4b-TcDm3E-2DNtwZcrVCVbQdCe8wp/view?usp=drive_link" class="card-link">VER PROYECTO <span>→</span></a>
-        </div>
-      </article>
-
-      <!-- ─── TARJETA 3 ─── -->
-      <article class="card">
-        <div class="card-header">
-          <div class="card-icon">▣</div>
-          <span class="card-tag">Heramientas Varias</span>
-        </div>
-        <h3 class="card-title">Actividades iniciales: Diseño de Matriz de Planeación + Infografía Interactiva +
-        Video Educativo Corto</h3>
-        <p class="card-desc">
-           En esta actividad se diseña una matriz de planeación y
-            se crean una infografía y un video educativo para explicar un concepto utilizando recursos digitales y multimedia.
-        </p>
-        <div class="card-tech">
-          <span>Canva</span>
-          <span>Cap Cut</span>
-          <span>Creacion</span>
-        </div>
-        <div class="card-footer">
-          <a target="_blank" href="https://drive.google.com/drive/folders/1g6hayCytLBtWstZdkR8c80AhMME5rQ3m?usp=drive_link" class="card-link">VER PROYECTO <span>→</span></a>
-        </div>
-      </article>
-
-      <!-- ─── TARJETA 4 ─── -->
-      <article class="card card--featured">
-        <div class="card-header">
-          <div class="card-icon">⛉</div>
-          <span class="card-tag">Canva</span>
-        </div>
-        <h3 class="card-title">Presentación Inteligencia Artificial Generativa Sobre Sostenibilidad
-</h3>
-        <p class="card-desc">
-          En esta actividad se diseñan y crean recursos educativos digitales para explicar un
-          concepto mediante herramientas visuales y multimedia.
-        </p>
-        <div class="card-tech">
-          <span>Canva</span>
-          <span>Retoque</span>
-          <span>Creacion</span>
-        </div>
-        <div class="card-footer">
-          <a target="_blank" href="https://docs.google.com/presentation/d/1YPMhpe6kLrccfhAXJHhpQX1b0UYhA5AK/edit?usp=drive_link&ouid=117521245204368435781&rtpof=true&sd=true" class="card-link">VER PROYECTO <span>→</span></a>
-        </div>
-      </article>
-
-       <!-- ─── TARJETA 5 (mover)─── -->
-       <article class="card">
-        <div class="card-header">
-          <div class="card-icon">⌬</div>
-          <span class="card-tag">Herramientas Varias</span>
-        </div>
-        <h3 class="card-title"> Explorando los Fundamentos de Scratch</h3>
-        <p class="card-desc">
-          En esta actividad se investigan los conceptos básicos de Scratch y
-           se elabora un mapa conceptual con sus fundamentos.
-            Además, se diseña un mini-proyecto que utilice personajes, 
-            bloques y eventos para presentar al grupo.
-        </p>
-        <div class="card-tech">
-          <span>Scratch</span>
-          <span>Canva</span>
-          <span>Investigacion</span>
-        </div>
-        <div class="card-footer">
-          <a target="_blank" href="https://drive.google.com/drive/folders/1A6nNoCJMPQcwJCcQk4PunsQzbpH-7nqV?usp=drive_link" class="card-link">VER PROYECTO <span>→</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
+    </section><!-- /#autoevaluacion -->
 
 
+    <!-- ============================================================
+         SECCIÓN 11: REFERENCIAS Y HERRAMIENTAS
+         Requerido: lista de herramientas, IA, plataformas, URLs
+         y referencias bibliográficas en normas APA 7.ª edición.
+    ============================================================ -->
+    <section id="referencias" class="section">
+      <div class="section-wrap">
+        <div class="section-header">
+          <span class="sec-num mono">11</span>
+          <div>
+            <h2 class="sec-title">REFERENCIAS Y HERRAMIENTAS</h2>
+            <p class="sec-sub mono">Fuentes bibliográficas APA 7 · Herramientas digitales utilizadas</p>
+          </div>
+        </div>
 
-  <!--TRABAJOS CON SCRATCH-->
-   <section id="trabajo2" class="work-section">
-    <div class="section-header">
-   
-      <span class="section-number">02</span>
-      <div>
-        <h2 class="section-title">SCRATCH</h2>
-        <p class="section-subtitle">Juegos y entornos educativos hechos con Scratch</p>
+        <div class="referencias-grid">
+
+          <!-- Herramientas digitales utilizadas -->
+          <div class="tools-section card-base">
+            <h3 class="subsec-title accent-cyan">HERRAMIENTAS DIGITALES UTILIZADAS</h3>
+            <p class="mono small-text" style="margin-bottom:1.5rem">
+              ▼ CAMBIA: completa la tabla con todas las herramientas que realmente usaste.
+            </p>
+            <div class="tools-table-wrap">
+              <table class="tools-table">
+                <thead>
+                  <tr>
+                    <th class="mono">HERRAMIENTA</th>
+                    <th class="mono">URL</th>
+                    <th class="mono">PROPÓSITO</th>
+                    <th class="mono">TIPO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ▼ Agrega o quita filas según las herramientas que usaste -->
+                  <tr>
+                    <td>Canva</td>
+                    <td><a href="https://canva.com" target="_blank" rel="noopener" class="ref-link">canva.com</a></td>
+                    <td>Infografías y presentaciones</td>
+                    <td class="mono">Freemium</td>
+                  </tr>
+                  <tr>
+                    <td>Genially</td>
+                    <td><a href="https://genially.com" target="_blank" rel="noopener" class="ref-link">genially.com</a></td>
+                    <td>Contenidos interactivos</td>
+                    <td class="mono">Freemium</td>
+                  </tr>
+                  <tr>
+                    <td>CapCut</td>
+                    <td><a href="https://capcut.com" target="_blank" rel="noopener" class="ref-link">capcut.com</a></td>
+                    <td>Edición de video educativo</td>
+                    <td class="mono">Gratuito</td>
+                  </tr>
+                  <tr>
+                    <td>ChatGPT (OpenAI)</td>
+                    <td><a href="https://chat.openai.com" target="_blank" rel="noopener" class="ref-link">chat.openai.com</a></td>
+                    <td>IA generativa · textos y prompts</td>
+                    <td class="mono">Freemium</td>
+                  </tr>
+                  <tr>
+                    <td>Google Gemini</td>
+                    <td><a href="https://gemini.google.com" target="_blank" rel="noopener" class="ref-link">gemini.google.com</a></td>
+                    <td>IA generativa multimodal</td>
+                    <td class="mono">Gratuito</td>
+                  </tr>
+                  <tr>
+                    <td>Claude (Anthropic)</td>
+                    <td><a href="https://claude.ai" target="_blank" rel="noopener" class="ref-link">claude.ai</a></td>
+                    <td>IA para análisis y código</td>
+                    <td class="mono">Freemium</td>
+                  </tr>
+                  <tr>
+                    <td>Scratch</td>
+                    <td><a href="https://scratch.mit.edu" target="_blank" rel="noopener" class="ref-link">scratch.mit.edu</a></td>
+                    <td>Programación visual educativa</td>
+                    <td class="mono">Gratuito</td>
+                  </tr>
+                  <tr>
+                    <td>MIT App Inventor 2</td>
+                    <td><a href="http://appinventor.mit.edu" target="_blank" rel="noopener" class="ref-link">appinventor.mit.edu</a></td>
+                    <td>Desarrollo de apps Android</td>
+                    <td class="mono">Gratuito</td>
+                  </tr>
+                  <tr>
+                    <td>GitHub Pages</td>
+                    <td><a href="https://pages.github.com" target="_blank" rel="noopener" class="ref-link">pages.github.com</a></td>
+                    <td>Hosting gratuito del portafolio</td>
+                    <td class="mono">Gratuito</td>
+                  </tr>
+                  <tr>
+                    <td>Visual Studio Code</td>
+                    <td><a href="https://code.visualstudio.com" target="_blank" rel="noopener" class="ref-link">code.visualstudio.com</a></td>
+                    <td>Editor de código HTML/CSS/JS</td>
+                    <td class="mono">Gratuito</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Referencias bibliográficas APA 7 -->
+          <div class="bib-section card-base">
+            <h3 class="subsec-title accent-magenta">REFERENCIAS BIBLIOGRÁFICAS</h3>
+            <p class="mono small-text" style="margin-bottom:1.5rem">
+              Formato APA 7.ª edición · Mínimo 5 referencias
+            </p>
+            <!--
+              ▼ CAMBIA: reemplaza con tus referencias reales.
+                Formato APA 7 para sitios web:
+                  Autor o institución. (Año). Título de la página. Nombre del sitio. URL
+
+                Ejemplos incluidos por defecto (de la guía del proyecto):
+                Puedes añadir tus propias fuentes académicas.
+            -->
+            <ol class="bib-list">
+              <li class="bib-item">
+                Canva Pty Ltd. (2024). <em>Canva — Diseño gráfico online.</em>
+                <a href="https://www.canva.com" target="_blank" rel="noopener" class="ref-link">https://www.canva.com</a>
+              </li>
+              <li class="bib-item">
+                Google LLC. (2024). <em>Google Gemini — Inteligencia artificial generativa.</em>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="ref-link">https://gemini.google.com</a>
+              </li>
+              <li class="bib-item">
+                MIT Media Lab. (2024). <em>Scratch — Programación para niños y jóvenes.</em>
+                <a href="https://scratch.mit.edu" target="_blank" rel="noopener" class="ref-link">https://scratch.mit.edu</a>
+              </li>
+              <li class="bib-item">
+                MIT App Inventor. (2024). <em>MIT App Inventor 2.</em>
+                <a href="http://appinventor.mit.edu" target="_blank" rel="noopener" class="ref-link">http://appinventor.mit.edu</a>
+              </li>
+              <li class="bib-item">
+                OpenAI. (2024). <em>ChatGPT — Asistente de IA conversacional.</em>
+                <a href="https://chat.openai.com" target="_blank" rel="noopener" class="ref-link">https://chat.openai.com</a>
+              </li>
+              <li class="bib-item">
+                GitHub, Inc. (2024). <em>GitHub Pages — Publicación de sitios web estáticos.</em>
+                <a href="https://pages.github.com" target="_blank" rel="noopener" class="ref-link">https://pages.github.com</a>
+              </li>
+              <!-- ▼ AGREGA aquí más referencias bibliográficas propias -->
+              <li class="bib-item bib-placeholder">
+                ▼ Agrega aquí referencias adicionales (libros, artículos, tutoriales).
+                Recuerda: mínimo 5 fuentes en total.
+              </li>
+            </ol>
+          </div>
+
+        </div><!-- /referencias-grid -->
       </div>
-    </div>
+    </section><!-- /#referencias -->
 
-    <div class="cards-grid">
-
- 
-      <article class="card">
-        <div class="card-header">
-          <div class="card-icon">◈</div>
-          <span class="card-tag">SCRATCH</span>
-        </div>
-        <h3 class="card-title">Reflexión sobre los fundamentos de contenidos digitales y multimediales</h3>
-        <p class="card-desc">
-          Se realiza una reflexión sobre los fundamentos del diseño de contenidos digitales y multimedia, 
-          analizando sus principios, tendencias,
-           roles, licenciamiento y su importancia en la educación.
-        </p>
-        <div class="card-tech">
-       
-          <span>Analisis</span>
-          <span>Reflexion</span>
-          <span>Sintesis</span>
-        </div>
-        <div class="card-footer">
-          
-          <a target="_blank" href="https://video.pictory.ai/202603151508212006bc701995cb449618ff8bba36e2eb115/20260315152933685OWOM0thvxtYqZnH" class="card-link">VER PROYECTO <span>→</span></a>
-        </div>
-      </article>
+  </main><!-- /main -->
 
 
-
-
-  <!--  PIE DE PÁGINA (FOOTER) -->
+  <!-- ============================================================
+       PIE DE PÁGINA
+       ▼ CAMBIA: tu nombre, programa y año.
+  ============================================================ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-logo">
-        <span class="logo-bracket">[</span>PORTAFOLIO<span class="logo-bracket">]</span>
+        <span class="bracket">[</span>PORTAFOLIO DIGITAL<span class="bracket">]</span>
       </div>
-      <p class="footer-text">
-        © 2026 &nbsp;·&nbsp; FIDEL GARCIA &nbsp;·&nbsp;
-        Creación de Contenidos Digitales y Multimediales B193
+      <p class="footer-name mono accent-cyan">NOMBRE APELLIDO</p>
+      <p class="footer-info mono">
+        Tecnología en Desarrollo de Sistemas Informáticos &nbsp;·&nbsp;
+        Desarrollo de Contenidos Digitales y Multimediales
       </p>
+      <p class="footer-inst mono">
+        Unidades Tecnológicas de Santander &nbsp;·&nbsp; 2026
+      </p>
+      <div class="footer-divider"></div>
+      <p class="footer-tech mono">Construido con HTML5 · CSS3 · JavaScript · Publicado en GitHub Pages</p>
     </div>
-
-    
-
-
-      
   </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
