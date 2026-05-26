@@ -778,7 +778,7 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 /* Tarjeta ancha (ocupa 2 columnas) */
-.wide-card { grid-column: span 2; }
+.wide-card { grid-column: span 7; }
 
 /* Encabezado de producto */
 .product-header {
