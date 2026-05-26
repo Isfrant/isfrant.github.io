@@ -481,6 +481,19 @@ button { cursor: pointer; font-family: inherit; }
   padding: 1rem;
 }
 
+.avatars-container {
+  display: flex;       /* Los pone uno al lado del otro */
+  flex-wrap: wrap;
+  flex-direction: column;     /* Si no caben en la pantalla, saltan a la siguiente línea */
+  gap: 2rem;           /* Separa un avatar del otro */
+  justify-content: flex-start; /* Los centra en la pantalla */
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 2rem;
+  box-sizing: border-box;
+  margin-top: -200px;
+}
+
 .avatar-icon {
   font-size: 2.5rem;
   color: var(--tx-lo);
@@ -511,38 +524,6 @@ button { cursor: pointer; font-family: inherit; }
 .tag-3 { bottom: 20%; left: -12%; animation-delay: 1.6s; }
 .tag-4 { bottom: 5%; right: -8%; animation-delay: 2.4s; color: var(--yellow); }
 
-@keyframes floatTag {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
-}
-
-/* Scroll hint */
-.scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.6rem;
-  letter-spacing: 0.25em;
-  color: var(--tx-lo);
-  z-index: 1;
-}
-
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--tx-lo), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50%       { opacity: 1; transform: scaleY(1.2); }
-}
 
 
 /* ─────────────────────────────────────────────────────
