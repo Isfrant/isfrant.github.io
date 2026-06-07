@@ -178,3 +178,32 @@ document.addEventListener('click', (e) => {
     ph.closest('.content-area').style.borderColor = 'rgba(255,0,144,0.35)';
   });
 })();
+
+
+
+const contenedor = document.getElementById('contenedor-juego');
+const btnExpandir = document.getElementById('btn-expandir');
+
+btnExpandir.addEventListener('click', () => {
+  // Toggle añade la clase si no está, y la quita si ya está
+  contenedor.classList.toggle('expandido');
+  
+  // Cambia el texto del botón según el estado
+  if (contenedor.classList.contains('expandido')) {
+    btnExpandir.textContent = 'Cerrar x';
+    btnExpandir.style.position = 'absolute';
+    btnExpandir.style.top = '20px';
+  } else {
+    btnExpandir.textContent = 'Expandir Juego';
+    btnExpandir.style.position = 'static';
+  }
+});
+
+// Cerrar el juego si el usuario presiona la tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && contenedor.classList.contains('expandido')) {
+    contenedor.classList.remove('expandido');
+    btnExpandir.textContent = 'Expandir Juego';
+    btnExpandir.style.position = 'static';
+  }
+});
